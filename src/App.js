@@ -30,6 +30,7 @@ function App() {
     }
    },[lat,lon])
     return (
+      <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
       <div className='Main'>
         <h1>Weather App</h1>
         <div className='App'>
@@ -46,6 +47,7 @@ function App() {
         </div>
         </div>
       </div>
+      </meta>
     );
   }
 export default App;
