@@ -8,7 +8,7 @@ function App() {
   const [nocity,setnocity]=useState(false)
   const [result,setresult]=useState()
    const  handleclick=async()=>{
-      const user= await fetch(`https://cors-anywhere.herokuapp.com/https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=${process.env.REACT_APP_API_KEY}`)
+      const user= await fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=${process.env.REACT_APP_API_KEY}`)
       const geo = await user.json();
       if(geo[0]){
       setlat(geo[0].lat)
