@@ -21,7 +21,7 @@ function App() {
    const  getweather =async()=>{
     const weather= await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${process.env.REACT_APP_API_KEY}`)
     const w=await weather.json()
-    setresult(`Temperature at ${city} is ${(w.main.temp-273.15).toFixed(2)}C and Weather Condition is ${w.weather[0].description}`)
+    setresult(`Temperature at ${city} is ${(w.main.temp-273.15).toFixed(2)} °C and Weather Condition is ${w.weather[0].description}`)
    }
    useEffect(()=>{
     if(lat!==undefined && lon!==undefined)
@@ -41,7 +41,7 @@ function App() {
            <>No City Found</>
         }
         { !nocity &&
-        <>{result}</>
+        <h2>{result}</h2>
         }
         </div>
         </div>
